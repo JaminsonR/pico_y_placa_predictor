@@ -10,7 +10,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Getting Started
 
-Clone this project in your local machine executing the following instructions:
+Clone the project:
 
 ```
 git clone https://github.com/JaminsonR/pico_y_placa_predictor.git
@@ -18,17 +18,19 @@ git clone https://github.com/JaminsonR/pico_y_placa_predictor.git
 
 ### Setting up the server
 
-1. Install the requirements inside of a Python venv.
-
+1. Navigate to Server directory
 ```
 cd server
+```
+2. Install the requirements inside of a Python venv.
+
+```
 python3 -m venv venv
 source .venv/bin/activate
 pip install -r requirements.txt
-python api.py
 ```
 
-2. Start server
+3. Start server
 
 ```
 python api.py
