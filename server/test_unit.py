@@ -56,7 +56,7 @@ def test_is_not_restricted_between_times(test_client):
 
 
 def test_is_not_restricted_on_datetime(test_client):
-    """Verify if license_plate is not restricted at time between restricted times"""
+    """Verify if license_plate is not restricted on datetime"""
 
     license_plate = "GRT0946"
     date = "2020-05-14"
