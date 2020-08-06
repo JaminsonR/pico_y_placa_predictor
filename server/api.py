@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request
 from flask_cors import CORS
 from models import LicensePlate, Restriction, Weekdays
-from datetime import datetime
 
 
 # initialize instance of WSGI application
@@ -11,32 +10,8 @@ cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 app.debug = True
 
-# creating initial pico y placa restrictions
-pico_y_placa_restrictions = []
-offset = 0
-for i in range(0, 7):
-
-    first_digit = i + offset + 1
-    second_digit = i + 2 + offset
-
-    pico_y_placa_restrictions.append(
-        Restriction(
-            "07:00",
-            "09:30",
-            Weekdays(i),
-            (first_digit, second_digit if second_digit is not 10 else 0),
-        )
-    )
-
-    pico_y_placa_restrictions.append(
-        Restriction(
-            "16:00",
-            "19:30",
-            Weekdays(i),
-            (first_digit, second_digit if second_digit is not 10 else 0),
-        )
-    )
-    offset += 1
+# initial setup
+pico_y_placa_restrictions = Restriction.create_pico_y_placa_restrictions()
 
 
 class Controller:
@@ -47,7 +22,7 @@ class Controller:
 
         date = query_params.get("date")
         time = query_params.get("time")
-        weekday = datetime.strptime(str(query_params.get("date")), "%Y-%m-%d").weekday()
+        weekday = Restriction.get_weekday_from_date(date)
         applicable_restrictions = [
             restriction
             for restriction in pico_y_placa_restrictions
