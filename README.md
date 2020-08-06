@@ -13,7 +13,7 @@ These instructions will get you a copy of the project up and running on your loc
 Clone this project in your local machine executing the following instructions:
 
 ```
-git clone
+git clone https://github.com/JaminsonR/pico_y_placa_predictor.git
 ```
 
 ### Setting up the server
