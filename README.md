@@ -73,7 +73,7 @@ cd server
 Activate the venv
 
 ```
-source .venv/bin/activate
+source venv/bin/activate
 ```
 
 And run the following command to start the tests:
