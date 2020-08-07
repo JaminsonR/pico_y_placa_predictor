@@ -43,7 +43,7 @@ python api.py
 1. Navigate to Webapp directory
 
 ```
-cd webapp
+cd webapp/pico-y-placa-predictor
 ```
 
 2. Install dependencies.
