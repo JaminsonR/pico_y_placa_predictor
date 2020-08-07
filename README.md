@@ -9,7 +9,6 @@ These instructions will get you a copy of the project up and running on your loc
 - Pytest 6.0.1
 - Node 12.9.0
 
-
 ## Getting Started
 
 Clone the project:
@@ -20,7 +19,7 @@ git clone https://github.com/JaminsonR/pico_y_placa_predictor.git
 
 ### Setting up the server
 
-**NOTE Make sure you are running node +12.9.0 before proceeding. You can do so by running
+**NOTE** Make sure you are running node +12.9.0 before proceeding. You can do so by running
 
 ```
 node -v
