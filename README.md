@@ -7,6 +7,8 @@ These instructions will get you a copy of the project up and running on your loc
 - Flask 1.1.2
 - Python 3.7.3
 - Pytest 6.0.1
+- Node 12.9.0
+- [Angular CLI 10.0.5](https://angular.io/guide/setup-local)
 
 ## Getting Started
 
@@ -17,6 +19,12 @@ git clone https://github.com/JaminsonR/pico_y_placa_predictor.git
 ```
 
 ### Setting up the server
+
+\*\*NOTE Make sure you are running node +12.9.0 before proceeding. You can do so by running
+
+```
+node -v
+```
 
 1. Navigate to Server directory
 
@@ -43,19 +51,19 @@ python api.py
 1. Navigate to Webapp directory
 
 ```
-cd webapp/pico-y-placa-predictor
+cd pico-y-placa-predictor
 ```
 
 2. Install dependencies.
 
 ```
-npm install
+npm i
 ```
 
-3. Start Webapp.
+3. Start Webapp
 
 ```
-ng serve --open
+npm start
 ```
 
 The webapp should be accessible at local http://localhost:4200/
