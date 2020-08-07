@@ -19,9 +19,11 @@ git clone https://github.com/JaminsonR/pico_y_placa_predictor.git
 ### Setting up the server
 
 1. Navigate to Server directory
+
 ```
 cd server
 ```
+
 2. Install the requirements inside of a Python venv.
 
 ```
@@ -38,7 +40,25 @@ python api.py
 
 ### Setting up the webapp
 
-The webapp should be accessible at local http://localhost:8080/
+1. Navigate to Webapp directory
+
+```
+cd webapp
+```
+
+2. Install dependencies.
+
+```
+npm install
+```
+
+3. Start Webapp.
+
+```
+ng serve --open
+```
+
+The webapp should be accessible at local http://localhost:4200/
 
 ## Running API Tests
 

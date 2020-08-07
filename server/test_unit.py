@@ -3,7 +3,7 @@ import pytest
 from api import app
 from datetime import datetime
 
-TEST_ROUTE = "/circulate"
+TEST_ROUTE = "/api/circulate"
 
 
 def get_query_string(license_plate, date, time):

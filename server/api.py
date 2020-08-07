@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from flask_cors import CORS
 from models import LicensePlate, Restriction, Weekdays
+import logging
 
 
 # initialize instance of WSGI application
@@ -17,7 +18,7 @@ pico_y_placa_restrictions = Restriction.create_pico_y_placa_restrictions()
 class Controller:
     def can_circulate(self):
 
-        query_params = request.args
+        query_params = request.get_json(force=True)
         license_plate = LicensePlate(query_params.get("license_plate"))
 
         date = query_params.get("date")
@@ -44,7 +45,10 @@ controller = Controller()
 
 
 app.add_url_rule(
-    "/circulate", "circulate", lambda: controller.can_circulate(), methods=["GET"]
+    "/api/circulate",
+    "/api/circulate",
+    lambda: controller.can_circulate(),
+    methods=["POST"],
 )
 
 
